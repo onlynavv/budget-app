@@ -1,16 +1,12 @@
 import React from 'react'
+import { useGlobalContext } from './context'
 
 const BudgetDisplay = () => {
+    const {budget} = useGlobalContext()
     return (
         <div className='display-row'>
             <div>
-                <p>Budget: 2000</p>
-            </div>
-            <div>
-                <p>Remaining: 1200</p>
-            </div>
-            <div>
-                <p>spend so for: 800</p>
+                <p>Budget: {budget}</p>
             </div>
         </div>
     )

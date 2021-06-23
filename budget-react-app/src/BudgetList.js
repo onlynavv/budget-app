@@ -1,12 +1,19 @@
 import React from 'react'
+import ExpenseItem from './ExpenseItem'
+import {useGlobalContext} from './context'
 
 const BudgetList = () => {
+
+    const {expenses} = useGlobalContext()
+
     return (
         <div>
             <h3>Expenses</h3>
-            <div>
-                
-            </div>
+            <ul>
+                {expenses.map((item)=>{
+                    return <ExpenseItem key={item.id} {...item} />
+                })}
+            </ul>
         </div>
     )
 }
